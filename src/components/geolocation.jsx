@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Map, InfoWindow, Marker, GoogleApiWrapper, google} from 'google-maps-react';
+import Example from './resumenStation';
  
 class GeoMap extends Component {
   constructor() {
@@ -24,12 +25,13 @@ class GeoMap extends Component {
       this.setState({locations})
     })
   }
-  // onMapClicked(props) {
-  //   console.log('holi', props)
-  // }
-
+  
   onMarkerClick (props, marker) {
-    console.log(props, marker)
+    console.log('holi');
+    console.log(<Example/>);
+    return (
+      <Example/>
+    )
   }
 
 render() {
@@ -39,8 +41,7 @@ render() {
     <Map google={this.props.google} zoom={15} initialCenter={{lat: -33.42251, lng: -70.64478}} onClick={this.onMapClicked}>
 
       {(markers.map((eachMarker, index) => (
-        <Marker key={index} onClick={this.onMarkerClick} name={eachMarker.name} address={eachMarker.extra.address}
-                position={{lat: eachMarker.latitude, lng: eachMarker.longitude}}/>)))}
+        <Marker key={index} onClick={this.onMarkerClick} name={eachMarker.name} address={eachMarker.extra.address} position={{lat: eachMarker.latitude, lng: eachMarker.longitude}} freeBikes={eachMarker.free_bikes} emptySlots={eachMarker.empty_slots}/>)))}
 
     </Map>
     );
