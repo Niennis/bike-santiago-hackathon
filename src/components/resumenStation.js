@@ -11,6 +11,7 @@ class Example extends Component {
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
+    this.handleShowFooter = this.handleShowFooter.bind(this); 
 
 
     this.state = {
@@ -27,6 +28,11 @@ class Example extends Component {
     this.setState({ show: true });
   }
 
+  handleShowFooter (){
+    this.setState({ showFooter: true });
+  }
+
+
   render() {
     return (
       <div>
@@ -39,11 +45,11 @@ class Example extends Component {
             <img className="img-est"src={Estacionamiento} alt="estacionamiento_bikeSantiago"/>
           </Modal.Header>
           <Modal.Body>
-          	<h3>Nombre Estacionamiento</h3>
-          	<h5>Sub Nombre Estacionamiento</h5>
+          	<h3>Cerro Blanco</h3>
+          	<h5>Recoleta #789</h5>
           	<Label className="label-info">Parking<span>5</span></Label>
           	<Label className="label-info">Biclycle<span>5</span></Label>
-          	<Button className="info-reportar">Reportar</Button>       
+          	<Button className="info-reportar" onClick={this.handleCloseFooter}>Reportar</Button>       
           </Modal.Body>
           <Modal.Footer>
           	<h4>Seleccione el problema que necesita reportar</h4>
@@ -53,7 +59,7 @@ class Example extends Component {
 						  <option value="luz">Luz Led mala</option>
 						  <option value="otro">Otro</option>
 						</select>
-          </Modal.Footer>
+          </Modal.Footer>       
         </Modal>
       </div>
     );
@@ -63,8 +69,7 @@ class Example extends Component {
 export default Example
 
 /*
-    this.handleCloseFooter = this.handleCloseFooter.bind(this); 
-    this.handleShowFooter = this.handleShowFooter.bind(this); 
+
 
   handleCloseFooter(){
   	this.setState({ showFooter: false});

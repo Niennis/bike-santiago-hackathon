@@ -8,8 +8,7 @@ import ModalStation from './components/resumenStation';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Demo/>
+      <div className="app">
         <ModalStation />
       </div>
     );

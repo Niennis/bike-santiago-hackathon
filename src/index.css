@@ -4,3 +4,7 @@ body {
   font-family: sans-serif;
 }
 
+.app{
+	height: 100vh;
+	background-image: url(img/fondo_mapa.webp); 
+}
