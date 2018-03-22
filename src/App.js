@@ -8,13 +8,11 @@ import './App.css';
 // import the Google Maps API Wrapper from google-maps-react
 // import child component
 // import MapContainer from './MapContainer';
-
 //Component
 
 class App extends Component {
   render() {
     return (
-
       <div className="App">      
         {/* <MapContainer/> */}
         {/* <GeoMap/> */}
