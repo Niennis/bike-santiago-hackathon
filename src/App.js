@@ -16,16 +16,15 @@
 // export default App;
 
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 // import the Google Maps API Wrapper from google-maps-react
 import { GoogleApiWrapper } from 'google-maps-react' 
 // import child component
-import MapContainer from './MapContainer';
+// import MapContainer from './MapContainer';
 import GeoMap from './components/geolocation';
 
 //Component
-import Demo from './components/geolocation';
 import ModalStation from './components/resumenStation'; 
 
 class App extends Component {
