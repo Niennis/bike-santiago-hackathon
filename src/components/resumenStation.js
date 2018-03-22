@@ -53,11 +53,11 @@ class Example extends Component {
           </Modal.Body>
           <Modal.Footer>
           	<h4>Seleccione el problema que necesita reportar</h4>
-          	<select name="carlist" form="carform">
-						  <option value="frenos">Frenos Malos</option>
-						  <option value="pinchar">Bicicleta Pinchada</option>
-						  <option value="luz">Luz Led mala</option>
-						  <option value="otro">Otro</option>
+          	<select className="selectInput" name="carlist" form="carform">
+						  <option className="options" value="frenos">Frenos Malos</option>
+						  <option className="options" value="pinchar">Bicicleta Pinchada</option>
+						  <option className="options" value="luz">Luz Led mala</option>
+						  <option className="options" value="otro">Otro</option>
 						</select>
           </Modal.Footer>       
         </Modal>

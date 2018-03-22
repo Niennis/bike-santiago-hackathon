@@ -30,13 +30,28 @@
 		color: #fff; 
 		border-radius: 15px;
 	}
-
-
 	span{
 		color: #000;
 		padding: 5px;   
 	}
 
+	.selectInput{
+		border-color: #FF9A19;
+		border-radius: 10px; 
+		padding: 5px; 
+	}
 
+	.selectInput:focus{
+		outline:none; 
+	}
+
+	.options{
+		background-color: #FF9A19;
+		color: #FFF;
+	}
+
+	.options::focus{
+		background-color: #fff; 
+	}
 }
 
