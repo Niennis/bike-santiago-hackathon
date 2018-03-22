@@ -1,0 +1,23 @@
+@media screen and (max-width: 450px){
+	.img-est{
+		width: 100%; 
+		height: auto; 
+		margin-top: -20px;
+		border-top-left-radius:5px;
+		border-top-right-radius: 5px;  
+	
+	}
+	.modal-header{
+		padding: 0; 
+	}
+
+	.label-info{
+		height: 50px; 
+		width: 80px;
+		padding: 5px;
+		border: 1px solid #FF9A19;
+		border-radius: 5px; 
+
+	}
+}
+
