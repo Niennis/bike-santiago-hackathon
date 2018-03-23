@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
 
-export const Prueba = () => 
+class Prueba extends Component {
+  render() {
+    return (
+      <div>
+        Hola mundo
+      </div>
+    );
+  }
+}
 
-<div> Hola Mundo </div>;
+export default Prueba;

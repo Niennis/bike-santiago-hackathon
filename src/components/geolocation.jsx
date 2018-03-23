@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Map, InfoWindow, Marker, GoogleApiWrapper, google} from 'google-maps-react';
+import {Map, Marker} from 'google-maps-react'; // InfoWindow, GoogleApiWrapper, google
 import Example from './resumenStation';
  
 class GeoMap extends Component {
@@ -7,13 +7,14 @@ class GeoMap extends Component {
     super();
     this.state = {
       apiKey:('AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E'),
+      show: false,
       locations: [
         // { name: "Cerro Blanco", location: {lat: -33.42251, lng: -70.64478} },
         // { name: "Av. Peru / Maestra Lidia Torres", location: {lat: -33.42382, lng: -70.63992} },
         // { name: "Clinica Dávila", location: {lat: -33.42751, lng: -70.64655} },
         // { name: "Bellavista /Recoleta", location: {lat: -33.43214, lng: -70.64846} },
         // { name: "Loreto / Bella vista", location: {lat: -33.43342, lng: -70.64226} }
-      ]
+      ],
     }
   }
 
@@ -26,24 +27,29 @@ class GeoMap extends Component {
     })
   }
   
-  onMarkerClick (props, marker) {
-    console.log('holi');
-    console.log(<Example/>);
-    return (
-      <Example/>
-    )
+  // componentDidMount() {
+  //   this.setState({ show: true })
+  // }
+
+  onMarkerClick (props) {
+    console.log(props);
+    return (this.setState({ show: true }))
   }
 
 render() {
   const markers = this.state.locations;
+  const {show} = this.state.show;
   // const center = {lat: this.props.}
   return (
-    <Map google={this.props.google} zoom={15} initialCenter={{lat: -33.42251, lng: -70.64478}} onClick={this.onMapClicked}>
+    <div>
+      {/* <Example station={markers.name}/> */}
+      <Map google={this.props.google} zoom={15} initialCenter={{lat: -33.42251, lng: -70.64478}} >
 
-      {(markers.map((eachMarker, index) => (
-        <Marker key={index} onClick={this.onMarkerClick} name={eachMarker.name} address={eachMarker.extra.address} position={{lat: eachMarker.latitude, lng: eachMarker.longitude}} freeBikes={eachMarker.free_bikes} emptySlots={eachMarker.empty_slots}/>)))}
+        {(markers.map((eachMarker, index) => (
+          <Marker key={index} onClick={this.onMarkerClick} name={eachMarker.name} address={eachMarker.extra.address} position={{lat: eachMarker.latitude, lng: eachMarker.longitude}} freeBikes={eachMarker.free_bikes} emptySlots={eachMarker.empty_slots}/>)))}
 
-    </Map>
+      </Map>
+    </div>
     );
   }
 }
