@@ -16,13 +16,11 @@ class App extends Component {
       <div className="App">      
         {/* <MapContainer/> */}
         <NavigationBar/>
-        <GeoMap google={this.props.google} />
+        {/* <GeoMap google={this.props.google} /> */}
         {/* <ModalStation /> */}
       </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
- apiKey: 'AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E',
-})(App)
+export default App;

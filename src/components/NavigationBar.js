@@ -9,6 +9,7 @@ import PuntoBike from './puntoBike';
 import './navigationBar.css';
 
 class NavigationBar extends Component {
+  
   render() {
     return (
       <div>

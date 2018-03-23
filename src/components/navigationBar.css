@@ -1,9 +1,13 @@
 .links{
-  margin: 0.5vh;
-  padding: 4vh;
+  margin: 1vh;
+  padding: 3vh;
   color: white;
 }
 .fixedBottom{
   background-color: #FF9A19;
   padding: 2vh 0;
+  position: fixed;
+  margin-top: 92vh;
+  z-index: 10000;
+  width: 100vw;
 }

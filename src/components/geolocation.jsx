@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Map, Marker} from 'google-maps-react'; // InfoWindow, GoogleApiWrapper, google
+import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'; // InfoWindow, GoogleApiWrapper, google
 import Example from './resumenStation';
  
 class GeoMap extends Component {
@@ -54,4 +54,6 @@ render() {
   }
 }
  
-export default GeoMap;
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E',
+ })(GeoMap)
