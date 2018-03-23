@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
-import { Map, Marker, GoogleApiWrapper } from 'google-maps-react'; // InfoWindow, GoogleApiWrapper, google
+import { Map, Marker, GoogleApiWrapper, InfoWindow } from 'google-maps-react'; // InfoWindow, GoogleApiWrapper, google
 import Example from './resumenStation';
+import { Button } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
+import { Label } from 'react-bootstrap'; 
+import Estacionamiento from './../img/estacion-salvador-bikesantiago.jpg';
+import './resumenStation.css';
+
+
  
 class GeoMap extends Component {
-  constructor() {
-    super();
+  constructor(show) {
+    super(show);
     this.state = {
       apiKey:('AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E'),
       show: false,
@@ -15,6 +22,11 @@ class GeoMap extends Component {
         // { name: "Bellavista /Recoleta", location: {lat: -33.43214, lng: -70.64846} },
         // { name: "Loreto / Bella vista", location: {lat: -33.43342, lng: -70.64226} }
       ],
+      name: null,
+      address: null,
+      showingInfoWindow: false,
+      activeMarker: {},
+      selectedPlace: {},
     }
   }
 
@@ -26,29 +38,55 @@ class GeoMap extends Component {
       this.setState({locations})
     })
   }
-  
-  // componentDidMount() {
-  //   this.setState({ show: true })
-  // }
 
-  onMarkerClick (props) {
-    console.log(props);
-    return (this.setState({ show: true }))
+  onMarkerClick(props, marker, e) {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true,
+      name: props.name,
+      address: props.address
+    });
+    console.log(props)
+  }
+  
+  onMapClicked(props) {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      })
+    }
+  }
+
+  componentDidMount() {
+    this.setState({ show: true })
+    console.log(this.state.show)
   }
 
 render() {
   const markers = this.state.locations;
   const {show} = this.state.show;
+  const {name} = this.state;
+  const {address} = this.state;
   // const center = {lat: this.props.}
   return (
     <div>
-      {/* <Example station={markers.name}/> */}
+
       <Map google={this.props.google} zoom={15} initialCenter={{lat: -33.42251, lng: -70.64478}} >
 
         {(markers.map((eachMarker, index) => (
-          <Marker key={index} onClick={this.onMarkerClick} name={eachMarker.name} address={eachMarker.extra.address} position={{lat: eachMarker.latitude, lng: eachMarker.longitude}} freeBikes={eachMarker.free_bikes} emptySlots={eachMarker.empty_slots}/>)))}
-
+          <Marker key={index} onClick={this.onMarkerClick.bind(this)} name={eachMarker.name} address={eachMarker.extra.address} position={{lat: eachMarker.latitude, lng: eachMarker.longitude}} freeBikes={eachMarker.free_bikes} emptySlots={eachMarker.empty_slots}/>)))}
+          
+          <InfoWindow
+          marker={this.state.activeMarker}
+          visible={this.state.showingInfoWindow}>
+            <div>
+              {this.state.name}{this.state.address}
+            </div>
+        </InfoWindow>
       </Map>
+      
     </div>
     );
   }

@@ -3,7 +3,8 @@
   color: #fff;
 }
 
-h1 {
+h1,
+h4 {
   margin: 0;
 }
 
@@ -15,6 +16,7 @@ h1 {
 .ContenedorTarjetas {
   background-color: rgb(245, 244, 243);
   color: grey;
+  padding-left: 2vh;
 }
 
 .BarraInferior {
@@ -38,6 +40,7 @@ p {
 .Mes {
   display: flex;
   justify-content: start;
+  padding-left: 2vh;
   color: grey;
   background-color: rgb(245, 244, 243);
 }
@@ -45,4 +48,19 @@ p {
 .Fecha {
   display: flex;
   justify-content: start;
+}
+
+.fa-arrows-alt-v {
+  color: grey;
+  display: flex;
+  justify-content: start;
+}
+
+.Trayecto {
+  color: rgb(59, 59, 58);
+  padding-right: 50vh;
+}
+
+.ResumenViaje {
+  background-color: #fff;
 }

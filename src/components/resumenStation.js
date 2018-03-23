@@ -6,8 +6,8 @@ import Estacionamiento from './../img/estacion-salvador-bikesantiago.jpg';
 import './resumenStation.css';
 
 class Example extends Component {
-  constructor(props, context, station) {
-    super(props, context, station);
+  constructor(props, context, station, address) {
+    super(props, context, station, address);
 
     this.handleShow = this.handleShow.bind(this);
     this.handleClose = this.handleClose.bind(this);
@@ -17,7 +17,8 @@ class Example extends Component {
     this.state = {
       show: false, 
       showFooter: false,
-      station 
+      station,
+      address
     };
   }
 
@@ -36,11 +37,12 @@ class Example extends Component {
 
   render() {
     const {station} = this.state;
+    const {address} = this.state;
     return (
       <div onClick={this.handleShow}>
-        {/* <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
-          Launch demo modal
-        </Button> */}
+        <Button bsStyle="primary" bsSize="large" onClick={this.handleShow}>
+          Marker
+        </Button>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
           <Modal.Header closeButton>
@@ -48,7 +50,7 @@ class Example extends Component {
           </Modal.Header>
           <Modal.Body>
           	<h3>{station}</h3>
-          	<h5>Recoleta #789</h5>
+          	<h5>{address}}</h5>
           	<Label className="label-info">Parking<span>5</span></Label>
           	<Label className="label-info">Biclycle<span>5</span></Label>
           	<Button className="info-reportar" onClick={this.handleCloseFooter}>Reportar</Button>       
