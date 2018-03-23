@@ -11,19 +11,18 @@ import './App.css';
 //Component
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">      
-        {/* <MapContainer/> */}
-        {/* <GeoMap/> */}
-        <GeoMap google={this.props.google} />
-        {/* <ModalStation /> */}
-        <NavigationBar/>
-      </div>
-    );
-  }
+ render() {
+   return (
+     <div className="App">      
+       {/* <MapContainer/> */}
+       <NavigationBar/>
+       <GeoMap google={this.props.google} />
+       {/* <ModalStation /> */}
+     </div>
+   );
+ }
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E',
+ apiKey: 'AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E',
 })(App)
