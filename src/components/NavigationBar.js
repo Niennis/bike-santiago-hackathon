@@ -26,13 +26,13 @@ class NavigationBar extends Component {
             <Link to="/PuntoBike" className="links"><i className="fas fa-align-right fa-2x"></i></Link>
             <Link to="/VistaUno" className="links"><i className="fas fa-map-marker-alt fa-2x"></i></Link>
             <Link to="/Example" className="links"><i className="fas fa-user fa-2x"></i></Link>
-            <Link to="/GeoMap" className="links"><i className="fas fa-phone-volume fa-2x"></i></Link>
+            <Link to="/" className="links"><i className="fas fa-phone-volume fa-2x"></i></Link>
           </Navbar>
 
           <Route path="/PuntoBike" component={PuntoBike}></Route>
-          <Route path="/GeoMap" component={GeoMap}></Route>
           <Route path="/Example" component={Example}></Route>
           <Route path="/VistaUno" component={VistaUno}></Route>
+          <Route exact path="/" component={GeoMap}></Route>
           </div>
         </Router>
       </div>

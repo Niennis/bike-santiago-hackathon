@@ -13,7 +13,6 @@ class ContenedorEtiqueta extends Component {
   render() {
     return(
       <div className="VistaUno">
-        <BarraSuperior/>
         <Mes/>
         <ContenedorTarjetas/>
         <BarraInferior/>
