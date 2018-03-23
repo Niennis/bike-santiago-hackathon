@@ -5,7 +5,7 @@ import BikeIcon from './../img/logo_bike.png';
 import GeoMap from './geolocation';
 import { GoogleApiWrapper } from 'google-maps-react' 
 import Example from './resumenStation';
-import Prueba from './Prueba';
+import PuntoBike from './puntoBike';
 import './navigationBar.css';
 
 class NavigationBar extends Component {
@@ -21,15 +21,15 @@ class NavigationBar extends Component {
               {/* <Navbar.Brand>
                 <img src={BikeIcon}/>
               </Navbar.Brand>             */}
-            <Link to="/Example" className="links"><i className="fas fa-align-right fa-2x"></i></Link>
-            <Link to="/Prueba" className="links"><i className="fas fa-map-marker-alt fa-2x"></i></Link>
-            <Link to="/Prueba" className="links"><i className="fas fa-user fa-2x"></i></Link>
+            <Link to="/PuntoBike" className="links"><i className="fas fa-align-right fa-2x"></i></Link>
+            <Link to="/Example" className="links"><i className="fas fa-map-marker-alt fa-2x"></i></Link>
+            <Link to="/Example" className="links"><i className="fas fa-user fa-2x"></i></Link>
             <Link to="/GeoMap" className="links"><i className="fas fa-phone-volume fa-2x"></i></Link>
           </Navbar>
 
-          <Route path="/Example" component={Example}></Route>
+          <Route path="/PuntoBike" component={PuntoBike}></Route>
           <Route path="/GeoMap" component={GeoMap}></Route>
-          <Route path="/Prueba" component={Prueba}></Route>
+          <Route path="/Example" component={Example}></Route>
           </div>
         </Router>
       </div>

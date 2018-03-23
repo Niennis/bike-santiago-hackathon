@@ -10,9 +10,6 @@ import './App.css';
 // import MapContainer from './MapContainer';
 //Component
 
-
-
-
 class App extends Component {
   render() {
     return (
@@ -27,5 +24,5 @@ class App extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E',
+ apiKey: 'AIzaSyDXFZ4Jie51LPLjQoXHhNq_icL34alYz0E',
 })(App)
