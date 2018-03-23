@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "gh-pages": "^1.1.0",
     "google-maps-react": "^1.1.6",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
@@ -14,6 +15,8 @@
     "react-scripts": "1.1.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -21,5 +24,6 @@
   },
   "devDependencies": {
     "google-maps": "^3.2.1"
-  }
+  },
+  "homepage": "https://Niennis.github.io/bike-santiago-hackathon"
 }

@@ -31,7 +31,7 @@ class GeoMap extends Component {
   }
 
   componentWillMount() {
-    fetch('http://api.citybik.es/v2/networks/santiago').then(data => data.json())
+    fetch('https://api.citybik.es/v2/networks/santiago').then(data => data.json())
     .then(response => {
       console.log(response.network.stations);
       const locations = response.network.stations;
