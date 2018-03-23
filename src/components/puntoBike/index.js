@@ -9,7 +9,7 @@ class PuntoBike extends Component{
 	render(){
 		return (
 			<div>
-				<BarraBike/> 
+				{/* <BarraBike/>  */}
 				<BuscadorComuna/>
 				<BarraFavoritos/>
 				<BodyPuntoBike/>

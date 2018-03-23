@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { GoogleApiWrapper } from 'google-maps-react' 
 import NavigationBar from './components/NavigationBar';
 import GeoMap from './components/geolocation';
+import Barra from './components/BarraSuperior';
 // import ModalStation from './components/resumenStation'; 
 import './App.css';
 // import logo from './logo.svg';
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div className="App">      
         {/* <MapContainer/> */}
+        {/* <Barra/> */}
         <NavigationBar/>
         {/* <GeoMap google={this.props.google} /> */}
         {/* <ModalStation /> */}

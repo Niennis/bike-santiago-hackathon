@@ -14,7 +14,7 @@ class VistaUno extends Component {
   render() {
     return(
       <div className="contenedorEtiqueta">
-        <BarraSuperior/>      
+        {/* <BarraSuperior/>       */}
         <ContenedorEtiqueta/>
         <ContenedorEtiqueta/>
         <ContenedorEtiqueta/>

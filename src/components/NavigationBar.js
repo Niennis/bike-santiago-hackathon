@@ -19,6 +19,14 @@ class NavigationBar extends Component {
       <Router>
         <div>
                 {/* <NavItem><Link to="/SearchImg" className="links">Images</Link></NavItem> */}
+
+          <div>
+            <div className="BarraSuperior">       
+              <h1 className="viajes"><Link to="/" className="links"><i className="fas fa-chevron-left fa-1x"></i></Link>BikeSantiago</h1>
+            </div>
+            {/* <Route exact path="/" component={GeoMap}></Route> */}
+          </div>
+
           <Navbar className="fixedBottom">
               {/* <Navbar.Brand>
                 <img src={BikeIcon}/>
